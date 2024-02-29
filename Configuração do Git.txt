@@ -1,0 +1,15 @@
+git config --global user.name aline-otilia
+git config --global user.emal aos_santos@hotmail.com
+
+
+*Para abrir o terminal para os comandos acima Ctrl+'
+
+*Repita o processo de selecionar, copiar e executar no terminal,
+mas agora com a segunda linha.
+
+*Com isso seu repositório local (GIT) está pronto e conectado 
+ao seu repositório remoto (GITHUB).
+
+*Seu usuário também já está configurado o que nos permita salvar 
+quaisquer alteração locais no GITHUB.
+
