@@ -1,5 +1,5 @@
 git config --global user.name aline-otilia
-git config --global user.emal aos_santos@hotmail.com
+git config --global user.email aos_santos@hotmail.com
 
 
 *Para abrir o terminal para os comandos acima Ctrl+'

@@ -1,0 +1,121 @@
+1 - Criar uma pasta com o nome Boacao
+
+2 - Abrir a pasta no VSCode
+
+3 - Abrir o terminal com a tecla de atalho Ctrl + ' ou no menu View -> Terminal
+
+4 - Executar no terminal o comando: dotnet new mvc
+
+5 - Abrir o arquivo Views/Shared/_Layout.cshtml e alterar seu código conforme o apresentado abaixo:
+
+    <div class="header container">
+      <div class="visible-xs visible-sm col-xs-12 col-sm-12 text-center sm-logo">
+        <a rel="home" href="index.html">
+          <img src="img/logo.png" width="200" alt="logo">
+        </a>
+      </div>
+    </div>
+        <div class="navbar" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="selected"><a href="about.html">About</a></li>
+                    <li><a href="service.html">Sevices</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li class= "hidden-xs hidden-sm">
+                     <a rel="home" href="index.html"><img class="logo" src="img/logo.png" width="200" alt="logo"></a>
+                    </li>
+                    <li><a href="event.html">Events</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="donate.html">Donate</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+		
+		6 - Abrir o arquivo Views/Home/Index.cshtml e alterar seu código conforme o apresentado abaixo:
+		
+		//Pegar da pasta Boacao
+		
+		
+7 - Abri novamente o terminal e instalar o pacote de Design da ferramenta de geração de código 
+com o comando: dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design --version 6.0.7
+7.1 - Se precisar antes faça isso: dotnet tool install --global dotnet-aspnet-codegenerator --version 6.0.7
+
+8 - Criar a View SobreNos, ainda no terminal execute o comando: dotnet-aspnet-codegenerator view Sobre Empty -udl -outDir "Views/Home"
+
+9 - Abrir o arquivo Controllers/HomeController e adicionar o método Sobre() abaixo do método Index(), conforme código abaixo:
+
+    public IActionResult Sobre()
+    {
+        return View();
+    }
+
+10 - Adicionar uma pasta com o nome img dentro da pasta wwwroot 
+
+11 - Adicionar na pasta img um arquivo de imagem com uma foto própria ou de sua preferência para servir como apresentação pessoal,
+ em seguida abrir o arquivo Views/Home/SobreNos e fazer as alterações abaixo, lembrando de colocar informações próprias
+ 
+ 
+ 12 - Abri novamente o terminal e criar o Controller responsável pelas requisições dos exercícios dos operadores matemáticos,
+ para isso execute o comando: dotnet-aspnet-codegenerator controller -name DoacaoController -outDir Controllers
+
+13 - Aproveitando o terminal vamos criar todas as Views do MatematicosController, execute um por vez os comandos abaixo:
+	
+	dotnet-aspnet-codegenerator view Index Empty -udl -outDir "Views/Doacao"
+
+	dotnet-aspnet-codegenerator view Service Empty -udl -outDir "Views/Doacao"
+	
+	dotnet-aspnet-codegenerator view Gallery Empty -udl -outDir "Views/Doacao"
+	
+	dotnet-aspnet-codegenerator view Events Empty -udl -outDir "Views/Doacao"
+	
+	dotnet-aspnet-codegenerator view Team Empty -udl -outDir "Views/Doacao"
+	
+	dotnet-aspnet-codegenerator view Donate Empty -udl -outDir "Views/Doacao"
+	
+	dotnet-aspnet-codegenerator view Login Empty -udl -outDir "Views/Doacao"
+
+14 - Abra o arquivo Controllers/DoacaoController e inclua os seguintes métodos abaixo do método Index:
+
+	[HttpGet]
+	public IActionResult Service()
+	{
+		return View();
+	}
+
+	[HttpGet]
+	public IActionResult Gallery()
+	{
+		return View();
+	}
+
+	public IActionResult Events()
+	{
+		return View();
+	}
+
+	[HttpGet]
+	public IActionResult Team()
+	{
+		return View();
+	}
+
+	[HttpGet]
+	public IActionResult Donate()
+	{
+		return View();
+	}
+
+	public IActionResult Login()
+	{
+		return View();
+	}
