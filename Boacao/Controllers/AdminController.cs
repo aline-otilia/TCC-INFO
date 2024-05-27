@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Boacao.Controllers
 
 {
-    [Authorize(Roles = "Administrador")]
+    
     public class AdminController : Controller
     {
         // GET: AdminController
