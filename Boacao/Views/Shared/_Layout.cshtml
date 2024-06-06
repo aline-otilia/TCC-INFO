@@ -1,112 +1,118 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Boacao</title>
-    
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/Boacao.styles.css" asp-append-version="true" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!--Retirado do site https://stackoverflow.com/questions/50976471/fontawesome-html-and-css-social-icons-->
 
-            <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="~/css/bootstrap.min.css">
-        <!--[if lt IE 9]>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>@ViewData["Title"] - Boacao</title>
+
+  <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+  <link rel="stylesheet" href="~/Boacao.styles.css" asp-append-version="true" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!--Retirado do site https://stackoverflow.com/questions/50976471/fontawesome-html-and-css-social-icons-->
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="~/css/bootstrap.min.css">
+  <!--[if lt IE 9]>
             <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
-        <link href="~/css/styles.css" rel="stylesheet">
-        <link rel="stylesheet" href="~/css/demo.css" asp-append-version="true"/>
-        <link rel="stylesheet" href="~/css/testimonial.css" asp-append-version="true" />
-        <link rel="stylesheet" href="~/css/font-awesome.min.css">
-        <link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+  <link href="~/css/styles.css" rel="stylesheet">
+  <link rel="stylesheet" href="~/css/demo.css" asp-append-version="true" />
+  <link rel="stylesheet" href="~/css/testimonial.css" asp-append-version="true" />
+  <link rel="stylesheet" href="~/css/font-awesome.min.css">
+  <link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
 </head>
+
 <body>
-      <!-- ============HEADER============= -->
+  <!-- ============HEADER============= -->
 
-    <header> 
-        <nav>
-        <div class="header container">
-      <div class="visible-xs visible-sm col-xs-12 col-sm-12 text-center sm-logo">
-        <a rel="home" href="index.html">
-          <img src="~/img/logo.png" width="200" alt="logo">
-        </a>
+  <header>
+    <nav>
+      <div class="header container">
+        <div class="visible-xs visible-sm col-xs-12 col-sm-12 text-center sm-logo">
+          <a rel="home" href="index.html">
+            <img src="~/img/logo.png" width="200" alt="logo">
+          </a>
+        </div>
+      </div>
+      <div class="navbar" role="navigation">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+            <li><a class="navbar-brand" asp-area="Home" asp-controller="Home" asp-action="Sobre">Sobre</a></li>
+            <li><a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Service">Serviços</a></li>
+            <li><a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Gallery">Galeria</a></li>
+            <li class="hidden-xs hidden-sm">
+              <a rel="home" asp-area="" asp-controller="Home" asp-action="Index"><img class="logo" src="~/img/logo.png"
+                  width="200" alt="logo"></a>
+            </li>
+            <li><a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Events">Eventos</a></li>
+            <li><a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Team">Equipe</a></li>
+            <li><a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Donate">Doação</a></li>
+            <li><a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Login">Login</a></li>
+          </ul>
+        </div>
+      </div>
+
+    </nav>
+  </header>
+
+  <div class="container">
+    <main role="main" class="pb-3">
+      @RenderBody()
+    </main>
+  </div>
+
+  <!-- ============FOOTER============= -->
+  <footer id="footer" class="mt-5">
+    <div class="footer-content container">
+      <div class="footer-adress text-center col-xs-12 col-sm-4 col-md-4 ">
+        <h4>Links Rápidos</h4>
+        <ul class="footer-menus">
+          <li class=""><a asp-are="" asp-controller="Home" asp-action="Index">Home /</a></li>
+          <li><a asp-area="" asp-controller="Home" asp-action="S">Sobre nos </a>About </li><br />
+          <li>Gallery /</li>
+          <li>Contact</li>
+        </ul>
+      </div>
+      <div class="footer-second col-xs-12 col-sm-4 col-md-4">
+        <div class="social-block text-center">
+          <div class="social-share">
+            <i class="fa fa-2x fa-facebook"></a></i>
+            <a href="https://github.com/aline-otilia/TCC-INFO"><i class="fa fa-2x  fa fa-github"></i></a>
+            <i class="fa fa-2x  fa-google-plus"></i>
+            <i class="fa fa-2x  fa-instagram"></i>
+          </div>
+        </div>
+        <h4 class="text-center footer-text1">Fale conosco</h4>
+        <p class="text-center footer-text1">123 456 7890</p>
+        <p class="text-center footer-text">humanity@shuvohabib.com</p>
+      </div>
+      <div class="footer-third col-xs-12 col-sm-4 col-md-4">
+        <div class="copyright">
+          <span> &copy; Copyright 2014 Theme</span><br>
+          <span>Todos direitos reservados</span>
+        </div>
       </div>
     </div>
-        <div class="navbar" role="navigation">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                </button>
-            </div>
-            <div class="collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li><a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a class="navbar-brand" asp-area="Home" asp-controller="Home" asp-action="Sobre">Sobre</a></li>
-                    <li><a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Service">Serviços</a></li>
-                    <li><a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Gallery">Galeria</a></li>
-                    <li class= "hidden-xs hidden-sm">
-                     <a rel="home" asp-area="" asp-controller="Home" asp-action="Index"><img class="logo" src="~/img/logo.png" width="200" alt="logo"></a>
-                    </li>
-                    <li><a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Events">Eventos</a></li>
-                    <li><a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Team">Equipe</a></li>
-                    <li><a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Donate">Doação</a></li>
-                    <li><a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Login">Login</a></li>
-                </ul>
-            </div>
-        </div>
-        
-        </nav>
-    </header>
-   
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
+    <div class="move-top-page">
     </div>
+  </footer>
 
-    <!-- ============FOOTER============= -->
-      <footer id="footer"> 
-        <div class="footer-content container">
-          <div class="footer-adress text-center col-xs-12 col-sm-4 col-md-4 ">
-                <h4>Links Rápidos</h4>
-                <ul class="footer-menus">
-                  <li class=""><a asp-are="" asp-controller="Home" asp-action="Index">Home /</a></li>
-                  <li><a asp-area="" asp-controller="Home" asp-action="S">Sobre nos </a>About </li><br />
-                  <li>Gallery /</li>
-                  <li>Contact</li>
-                </ul>
-            </div>
-            <div class="footer-second col-xs-12 col-sm-4 col-md-4">
-              <div class="social-block text-center">
-                <div class="social-share">
-                  <i class="fa fa-2x fa-facebook"></a></i>
-                  <a href="https://github.com/aline-otilia/TCC-INFO"><i class="fa fa-2x  fa fa-github"></i></a>
-                  <i class="fa fa-2x  fa-google-plus"></i>
-                  <i class="fa fa-2x  fa-instagram"></i>
-                </div>
-              </div>
-              <h4 class="text-center footer-text1">Fale conosco</h4>
-               <p class="text-center footer-text1">123 456 7890</p>
-                <p class="text-center footer-text">humanity@shuvohabib.com</p></div>
-            <div class="footer-third col-xs-12 col-sm-4 col-md-4">
-              <div class="copyright">
-                  <span> &copy; Copyright 2014 Theme</span><br>
-                  <span>Todos direitos reservados</span>
-              </div>
-            </div>
-        </div>
-        <div class="move-top-page">
-      </div>
-    </footer>
-    
 
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+  <script src="~/lib/jquery/dist/jquery.min.js"></script>
+  <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="~/js/site.js" asp-append-version="true"></script>
+  @await RenderSectionAsync("Scripts", required: false)
 </body>
+
 </html>

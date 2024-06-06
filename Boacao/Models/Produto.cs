@@ -15,17 +15,17 @@ namespace Boacao.Models
 
         [Required(ErrorMessage = "Digite o Nome do Produto")]
         [StringLength(60, ErrorMessage = "O Nome do Produto deve possuir no máximo 60 caracteres")]
-        public string? Nome { get; set; }
+        public string Nome { get; set; }
 
 
         [Required(ErrorMessage = "Digite a Descrição")]
         [StringLength(100, ErrorMessage = "A Descrição deve possuir no máximo 500 caracteres")]
-        public string? Descricao { get; set; }
+        public string Descricao { get; set; }
 
-        public string? CategoriId { get; set; }
+        public string CategoriId { get; set; }
 
         [StringLength(200)]
-        public string? Foto { get; set; }
+        public string Foto { get; set; }
 
         public bool Ativo { get; set; } = true;
 

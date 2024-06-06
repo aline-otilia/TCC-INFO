@@ -1,16 +1,19 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Boacao.Models;
+using Boacao.Data;
 
 namespace Boacao.Controllers;
 
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
+    private readonly AppDbContext _context;
 
-    public HomeController(ILogger<HomeController> logger)
+    public HomeController(ILogger<HomeController> logger, AppDbContext context)
     {
         _logger = logger;
+        _context = context;
     }
 
     public IActionResult Index()
@@ -26,7 +29,8 @@ public class HomeController : Controller
     [HttpGet]
     public IActionResult Service()
     {
-        return View();
+        var produtos = _context.Produtos.ToList();
+        return View(produtos);
     }
 
     [HttpGet]
@@ -48,11 +52,6 @@ public class HomeController : Controller
 
     [HttpGet]
     public IActionResult Donate()
-    {
-        return View();
-    }
-
-    public IActionResult Login()
     {
         return View();
     }
