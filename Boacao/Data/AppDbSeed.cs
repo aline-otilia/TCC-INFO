@@ -2,6 +2,7 @@ using Boacao.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
+
 namespace Boacao.Data;
 
 public class AppDbSeed
@@ -74,34 +75,66 @@ public class AppDbSeed
         List<Categoria> categorias = new(){
             new Categoria() {
                 Id = 1,
-                Nome = "Livros e papelaria"
+                Nome = "Alimentos"
             },
             new Categoria() {
                 Id = 2,
-                Nome = "Games e PC Gamer"
+                Nome = "Sangue"
             },
             new Categoria() {
                 Id = 3,
-                Nome = "Informática"
+                Nome = "Ração"
             },
             new Categoria() {
                 Id = 4,
-                Nome = "Smartphones"
+                Nome = "Movéis"
             },
             new Categoria() {
                 Id = 5,
-                Nome = "Eletrodomesticos e Casa"
+                Nome = "Roupas"
             },
             new Categoria() {
                 Id = 6,
-                Nome = "Beleza e Perfumaria"
-            },
-            new Categoria() {
-                Id = 7,
-                Nome = "Móveis e Decoração"
+                Nome = "Diversos"
             }
         };
         builder.Entity<Categoria>().HasData(categorias);
         #endregion
+
+
+           #region Popular Produtos de Doações
+List<Produto> produtosDoacoes = new(){
+    new Produto() { 
+        Id = 1,
+        Nome = "Alimentos não perecíveis", 
+        Descricao = "Itens como arroz, feijão, macarrão, etc.", 
+        //CategoriaId = 1, 
+        Foto = "alimentos.jpg" 
+    },
+    new Produto() { 
+        Id = 2,
+        Nome = "Roupas", 
+        Descricao = "Roupas em bom estado para adultos e crianças", 
+        //CategoriaId = 2, 
+        Foto = "roupas.jpg" 
+    },
+    new Produto() { 
+        Id = 3,
+        Nome = "Brinquedos", 
+        Descricao = "Brinquedos para crianças de todas as idades", 
+        //CategoriaId = 3, 
+        Foto = "brinquedos.jpg" 
+    },
+    new Produto() { 
+        Id = 4,
+        Nome = "Material Escolar", 
+        Descricao = "Cadernos, lápis, borrachas, etc.", 
+        //CategoriaId = 4, 
+        Foto = "material-escolar.jpg" 
+    }
+};
+
+builder.Entity<Produto>().HasData(produtosDoacoes);
+#endregion
     }
 }
