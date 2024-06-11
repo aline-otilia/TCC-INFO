@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
+
 namespace Boacao.ViewModels;
 
 public class LoginVM
