@@ -36,7 +36,7 @@ public class AppDbSeed
                 NormalizedEmail = "ADMIN@BOACAO.COM.BR",
                 UserName = "Admin",
                 NormalizedUserName = "ADMIN",
-                LockoutEnabled = false,
+                LockoutEnabled = true,
                 EmailConfirmed = true,
             },
             new IdentityUser(){
@@ -71,6 +71,25 @@ public class AppDbSeed
         builder.Entity<Doador>().HasData(doadores);
         #endregion
 
+        #region Populate UserRole - Usuário com Perfil
+        List<IdentityUserRole<string>> userRoles = new()
+        {
+            new IdentityUserRole<string>() {
+                UserId = users[0].Id,
+                RoleId = roles[0].Id
+            },
+            new IdentityUserRole<string>() {
+                UserId = users[0].Id,
+                RoleId = roles[1].Id
+            },
+            new IdentityUserRole<string>() {
+                UserId = users[1].Id,
+                RoleId = roles[1].Id
+            }
+        };
+        builder.Entity<IdentityUserRole<string>>().HasData(userRoles);
+        #endregion
+
         #region Popular Categorias
         List<Categoria> categorias = new(){
             new Categoria() {
@@ -102,39 +121,38 @@ public class AppDbSeed
         #endregion
 
 
-           #region Popular Produtos de Doações
-List<Produto> produtosDoacoes = new(){
-    new Produto() { 
-        Id = 1,
-        Nome = "Alimentos não perecíveis", 
-        Descricao = "Itens como arroz, feijão, macarrão, etc.", 
-        //CategoriaId = 1, 
-        Foto = "alimentos.jpg" 
-    },
-    new Produto() { 
-        Id = 2,
-        Nome = "Roupas", 
-        Descricao = "Roupas em bom estado para adultos e crianças", 
-        //CategoriaId = 2, 
-        Foto = "roupas.jpg" 
-    },
-    new Produto() { 
-        Id = 3,
-        Nome = "Brinquedos", 
-        Descricao = "Brinquedos para crianças de todas as idades", 
-        //CategoriaId = 3, 
-        Foto = "brinquedos.jpg" 
-    },
-    new Produto() { 
-        Id = 4,
-        Nome = "Material Escolar", 
-        Descricao = "Cadernos, lápis, borrachas, etc.", 
-        //CategoriaId = 4, 
-        Foto = "material-escolar.jpg" 
-    }
-};
-
-builder.Entity<Produto>().HasData(produtosDoacoes);
-#endregion
+        #region Popular Produtos de Doações
+        List<Produto> produtosDoacoes = new(){
+            new Produto() {
+                Id = 1,
+                Nome = "Alimentos não perecíveis",
+                Descricao = "Itens como arroz, feijão, macarrão, etc.", 
+                CategoriaId = 1, 
+                Foto = "alimentos.jpg"
+            },
+            new Produto() {
+                Id = 2,
+                Nome = "Roupas",
+                Descricao = "Roupas em bom estado para adultos e crianças", 
+                CategoriaId = 2, 
+                Foto = "roupas.jpg"
+            },
+            new Produto() {
+                Id = 3,
+                Nome = "Brinquedos",
+                Descricao = "Brinquedos para crianças de todas as idades", 
+                CategoriaId = 3, 
+                Foto = "brinquedos.jpg"
+            },
+            new Produto() {
+                Id = 4,
+                Nome = "Material Escolar",
+                Descricao = "Cadernos, lápis, borrachas, etc.", 
+                CategoriaId = 4, 
+                Foto = "material-escolar.jpg"
+            }
+        };
+        builder.Entity<Produto>().HasData(produtosDoacoes);
+        #endregion
     }
 }

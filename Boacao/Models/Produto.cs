@@ -22,7 +22,7 @@ namespace Boacao.Models
         [StringLength(100, ErrorMessage = "A Descrição deve possuir no máximo 500 caracteres")]
         public string Descricao { get; set; }
 
-        public int CategoriId { get; set; }
+        public int CategoriaId { get; set; }
         [ForeignKey("CategoriaId")] 
         public Categoria Categoria { get; set; }
 

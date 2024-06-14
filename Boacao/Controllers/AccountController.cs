@@ -1,4 +1,5 @@
 using System.Net.Mail;
+using Boacao.Helpers;
 using Boacao.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -65,6 +66,50 @@ public class AccountController : Controller
             ModelState.AddModelError(string.Empty, "Usuário e/ou Senha Inválidos!!!");
         }
         return View(login);
+    }
+
+
+    [HttpGet]
+    public IActionResult Register()
+    {
+        return View();
+    }
+
+
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> Register(RegisterVM register)
+    {
+        if (ModelState.IsValid)
+        {
+            var user = Activator.CreateInstance<IdentityUser>();
+            user.UserName = user.Email = register.Email;
+            user.NormalizedUserName = user.NormalizedEmail = register.Email.ToUpper();
+            user.EmailConfirmed = true;
+            user.LockoutEnabled = true;
+            var result = await _userManager.CreateAsync(user, register.Senha);
+
+            if (result.Succeeded)
+            {
+                _logger.LogInformation($"Novo usuário registrado com o email {user.Email}.");
+                var userId = await _userManager.GetUserIdAsync(user);
+                
+                await _userManager.AddToRoleAsync(user, "Usuário");
+
+                return RedirectToAction(nameof(Login));
+            }
+            foreach (var error in result.Errors)
+            {
+                ModelState.AddModelError(string.Empty, TranslateIdentityErrors.TranslateErrorMessage(error.Code));
+            }
+        }
+        return View(register);
+    }
+
+
+    public IActionResult AccessDenied()
+    {
+        return View();
     }
 
 

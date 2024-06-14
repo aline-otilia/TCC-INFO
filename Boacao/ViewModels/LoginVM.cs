@@ -5,12 +5,13 @@ namespace Boacao.ViewModels;
 
 public class LoginVM
 {
-    [Display(Name = "Email ou Nome de Usuário", Prompt = "Informe seu Email ou Nome de Usuário")]
-    [Required(ErrorMessage = "Por favor, informe seu email ou nome de usuário")]
+    [Display(Name = "Email de Acesso")]
+    [Required(ErrorMessage = "Informe seu email")]
+    [EmailAddress(ErrorMessage = "Informe um email válido")]
     public string Email { get; set; }
 
-    [Display(Name = "Senha de Acesso", Prompt = "Informe sua Senha")]
-    [Required(ErrorMessage = "Por favor, informe sua senha")]
+    [Display(Name = "Senha de Acesso")]
+    [Required(ErrorMessage = "Informe sua senha")]
     [DataType(DataType.Password)]
     public string Senha { get; set; }
 
