@@ -126,33 +126,82 @@ public class AppDbSeed
             new Produto() {
                 Id = 1,
                 Nome = "Alimentos não perecíveis",
-                Descricao = "Itens como arroz, feijão, macarrão, etc.", 
-                CategoriaId = 1, 
+                Descricao = "Itens como arroz, feijão, macarrão, etc.",
+                CategoriaId = 1,
                 Foto = "alimentos.jpg"
             },
             new Produto() {
                 Id = 2,
                 Nome = "Roupas",
-                Descricao = "Roupas em bom estado para adultos e crianças", 
-                CategoriaId = 2, 
+                Descricao = "Roupas em bom estado para adultos e crianças",
+                CategoriaId = 2,
                 Foto = "roupas.jpg"
             },
             new Produto() {
                 Id = 3,
                 Nome = "Brinquedos",
-                Descricao = "Brinquedos para crianças de todas as idades", 
-                CategoriaId = 3, 
+                Descricao = "Brinquedos para crianças de todas as idades",
+                CategoriaId = 3,
                 Foto = "brinquedos.jpg"
             },
             new Produto() {
                 Id = 4,
                 Nome = "Material Escolar",
-                Descricao = "Cadernos, lápis, borrachas, etc.", 
-                CategoriaId = 4, 
+                Descricao = "Cadernos, lápis, borrachas, etc.",
+                CategoriaId = 4,
                 Foto = "material-escolar.jpg"
             }
         };
         builder.Entity<Produto>().HasData(produtosDoacoes);
         #endregion
+
+        #region Popular Depoimentos
+        List<Depoimento> depoimentos = new()
+        {
+            new Depoimento()
+            {
+                Id = 1,
+                Autor = "Maria Silva",
+                Conteudo = "Excelente iniciativa! Graças a este projeto, pude ajudar muitas pessoas necessitadas.",
+                DataDepoimento = DateTime.Now,
+                Aprovado = true
+            },
+            new Depoimento()
+            {
+                Id = 2,
+                Autor = "João Santos",
+                Conteudo = "Fiquei impressionado com a facilidade de fazer doações através deste site. Recomendo a todos!",
+                DataDepoimento = DateTime.Now,
+                Aprovado = true
+            }
+        };
+                builder.Entity<Depoimento>().HasData(depoimentos);
+                #endregion
+
+                #region Popular Galeria de Fotos
+                List<Galeria> Galerias = new()
+        {
+            new Galeria()
+            {
+                Id = 1,
+                Titulo = "Evento de arrecadação de alimentos",
+                Descricao = "Fotos do nosso evento de arrecadação de alimentos para pessoas carentes.",
+                Imagem = "evento-alimentos.jpg",
+                DataUpload = DateTime.Now,
+                Ativo = true
+            },
+            new Galeria()
+            {
+                Id = 2,
+                Titulo = "Distribuição de roupas",
+                Descricao = "Registro da distribuição de roupas para moradores de rua.",
+                Imagem = "distribuicao-roupas.jpg",
+                DataUpload = DateTime.Now,
+                Ativo = true
+            }
+        };
+        builder.Entity<Galeria>().HasData(Galerias);
+        #endregion
+
     }
 }
