@@ -78,24 +78,30 @@
       <div class="footer-adress text-center col-xs-12 col-sm-4 col-md-4 ">
         <h4>Links Rápidos</h4>
         <ul class="footer-menus">
-          <li class=""><a asp-are="" asp-controller="Home" asp-action="Index">Home </a></li>
-          <li><a asp-area="" asp-controller="Home" asp-action="S">Sobre nós </a> Login </li><br />
-          <li>Galeria </li>
-          <li>Contato</li>
+          <li class="">
+            <a class="text-white" asp-area="" asp-controller="Home" asp-action="Index">Home </a>
+            <a class="text-white" asp-area="Home" asp-controller="Home" asp-action="Sobre">Sobre</a>
+          </li><br />
+          <li>
+            <a class="text-white" asp-area="" asp-controller="Home" asp-action="Service">Serviços</a>
+            <a class="text-white" asp-area="" asp-controller="Home" asp-action="Team">Equipe</a>
+            <a class="text-white" asp-area="" asp-controller="Account" asp-action="Login">Login</a>
+          </li>
+
         </ul>
       </div>
       <div class="footer-second col-xs-12 col-sm-4 col-md-4">
         <div class="social-block text-center">
           <div class="social-share">
             <i class="fa fa-2x fa-facebook"></a></i>
-            <a href="https://github.com/aline-otilia/TCC-INFO"><i class="fa fa-2x  fa fa-github"></i></a>
+            <a class="text-white" href="https://github.com/aline-otilia/TCC-INFO"><i class="fa fa-2x  fa fa-github"></i></a>
             <i class="fa fa-2x  fa-google-plus"></i>
             <i class="fa fa-2x  fa-instagram"></i>
           </div>
         </div>
         <h4 class="text-center footer-text1">Fale conosco</h4>
         <p class="text-center footer-text1">014 456 7890</p>
-        <p class="text-center footer-text">boacao@boacao.com</p>
+        <p class="text-center footer-text">boacao@boacao.com.br</p>
       </div>
       <div class="footer-third col-xs-12 col-sm-4 col-md-4">
         <div class="copyright">
