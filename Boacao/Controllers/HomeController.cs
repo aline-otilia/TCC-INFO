@@ -33,6 +33,36 @@ public class HomeController : Controller
         return View(produtos);
     }
 
+     [HttpGet]
+    public IActionResult Service1()
+    {
+        return View();
+    }
+
+    [HttpGet]
+    public IActionResult Service2()
+    {
+        return View();
+    }
+
+    [HttpGet]
+    public IActionResult Service3()
+    {
+        return View();
+    }
+
+    [HttpGet]
+    public IActionResult Service4()
+    {
+        return View();
+    }
+    
+    [HttpGet]
+    public IActionResult Service5()
+    {
+        return View();
+    }
+
     [HttpGet]
     public IActionResult Gallery()
     {
